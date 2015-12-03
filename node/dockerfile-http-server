@@ -1,0 +1,18 @@
+# boilerplate
+FROM kilianciuffolo/node:__VERSION__
+MAINTAINER me@nailik.org
+
+# pkgs
+RUN \
+  apt-get update && \
+  apt-get install --no-install-recommends -y -q \
+    libpng-dev \
+    && \
+  apt-get clean autoclean && \
+  apt-get autoremove -y && \
+  rm -rf /var/lib/{apt,dpkg,cache,log}/
+
+# static server
+RUN npm install -g http-server && npm cache clean
+ENTRYPOINT ["http-server"]
+EXPOSE 8080
