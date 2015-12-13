@@ -16,6 +16,7 @@ VERSIONS=(
   5.0.0
   5.1.0
   5.1.1
+  5.2.0
 )
 
 function build_image {
