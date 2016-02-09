@@ -8,9 +8,10 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN \
   apt-get update && \
   apt-get install --no-install-recommends -y -q \
-    ssh \
     awscli \
+    graphicsmagick \
     libpng-dev \
+    ssh \
     && \
   apt-get clean autoclean && \
   apt-get autoremove -y && \
