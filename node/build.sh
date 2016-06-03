@@ -51,6 +51,7 @@ VERSIONS=(
   6.0.0
   6.1.0
   6.2.0
+  6.2.1
 )
 
 function build_image {
