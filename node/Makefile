@@ -1,6 +1,6 @@
 build: build-node build-http-server build-wercker
 push: push-node push-http-server push-wercker
-all: build-all push-all
+all: build push
 
 build-node:
 	./build.sh dockerfile-node
