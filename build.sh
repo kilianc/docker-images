@@ -10,6 +10,8 @@ function build_image {
   local image_name="$2:$3"
   local node_version_in="$4"
 
+  docker pull $image_name || true
+
   local dockerfile=$(cat "$dockerfile_path" | sed "s/__VERSION__/$node_version_in/g")
   local build_output=$(echo "$dockerfile" | docker build -t "$image_name" -)
   local node_version_out=$(docker run --rm --entrypoint node "$image_name" -v)
